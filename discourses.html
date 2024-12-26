@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Videos - Shankara Shaktananda - Guhai Swami</title>
+    <title>Audio - Shankara Shaktananda - Guhai Swami</title>
     <style>
         :root {
             --primary-color: #2c3e50;
@@ -87,16 +87,16 @@
             padding-bottom: 0.2em;
         }
 
-        .videos {
-            display: grid;
-            gap: 20px;
-            padding: 20px 0;
-        }
-
-        video {
-            width: 100%;
+        .audio {
+            background: #fff;
+            padding: 20px;
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        audio {
+            width: 100%;
+            margin: 10px 0;
         }
 
         @media (max-width: 768px) {
@@ -122,26 +122,25 @@
 <body>
     <nav>
         <a href="index.html">Introduction</a>
-        <a href="photos.html">Photos</a>
-        <a href="videos.html">Videos</a>
-        <a href="audio.html">Audio</a>
+        <a href="media-gallery.html">Media Gallery</a>
+        <a href="discourses.html">Discourses</a>
     </nav>
 
     <div class="content">
-        <h1>Video Collection</h1>
-        <div class="videos">
-            <video controls>
-                <source src="assets/video/video1.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-            <video controls>
-                <source src="assets/video/video2.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-            <video controls>
-                <source src="assets/video/video3.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
+        <h1>Audio Library</h1>
+        <div class="audio">
+            <audio controls>
+                <source src="assets/audio/audio1.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+            <audio controls>
+                <source src="assets/audio/audio2.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+            <audio controls>
+                <source src="assets/audio/audio3.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
         </div>
     </div>
 </body>

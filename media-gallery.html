@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media Gallery - Shankara Shaktananda - Guhai Swami</title>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --accent-color: #e74c3c;
+            --text-color: #333;
+            --background-color: #f5f6fa;
+        }
+
+        @keyframes gradientAnimation {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(
+                135deg,
+                #e7e3de,
+                #f8cb97,
+                #db9d16,
+                #edec9b,
+                #f4eda2,
+                #e7e3de
+            );
+            background-size: 400% 400%;
+            animation: gradientAnimation 15s ease infinite;
+            color: var(--text-color);
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        nav {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            padding: 1.2em;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav a {
+            color: var(--primary-color);
+            text-decoration: none;
+            padding: 10px 20px;
+            margin-right: 10px;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+
+        nav a:hover {
+            background-color: var(--accent-color);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .content {
+            max-width: 1000px;
+            margin: 2em auto;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 8px;
+            box-shadow: 0 4px 25px rgba(0,0,0,0.05);
+            backdrop-filter: blur(10px);
+        }
+
+        h1 {
+            color: var(--primary-color);
+            font-size: 2.5em;
+            margin-bottom: 0.5em;
+            border-bottom: 2px solid var(--accent-color);
+            padding-bottom: 0.2em;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            padding: 20px 0;
+        }
+
+        .gallery img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .gallery img:hover {
+            transform: scale(1.03);
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                text-align: center;
+            }
+            
+            nav a {
+                display: inline-block;
+                margin: 5px;
+            }
+
+            .content {
+                margin: 1em;
+            }
+
+            h1 {
+                font-size: 2em;
+            }
+
+            .gallery {
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                gap: 15px;
+            }
+        }
+
+        .carousel-container {
+            position: relative;
+            width: 100%;
+            margin: 40px 0;
+            overflow: hidden;
+        }
+
+        .carousel {
+            position: relative;
+            height: 300px;
+            margin: 0 40px;
+        }
+
+        .carousel-track {
+            position: relative;
+            height: 100%;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .carousel-slide {
+            position: absolute;
+            top: 0;
+            width: 280px;
+            height: 100%;
+            padding: 0 10px;
+        }
+
+        .carousel-slide img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .album-title {
+            display: block;
+            text-align: center;
+            margin-top: 10px;
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+
+        .carousel-button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255, 255, 255, 0.8);
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            z-index: 1;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .carousel-button:hover {
+            background: rgba(255, 255, 255, 0.9);
+        }
+
+        .prev {
+            left: 0;
+        }
+
+        .next {
+            right: 0;
+        }
+
+        .current-slide {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html">Introduction</a>
+        <a href="media-gallery.html">Media Gallery</a>
+        <a href="discourses.html">Discourses</a>
+    </nav>
+
+    <div class="content">
+        <h1>Photo Gallery</h1>
+        <div class="gallery">
+
+        </div>
+
+        <h2>Photo Albums</h2>
+        <div class="carousel-container">
+            <button class="carousel-button prev">❮</button>
+            <div class="carousel">
+                <div class="carousel-track">
+                    <div class="carousel-slide">
+                        <a href="https://photos.app.goo.gl/58tTDvbJXCsgxU8X7" target="_blank">
+                            <img src="assets/img/matunga-2024-dp.jpg" alt="Matunga Shankara Mutt - 2024">
+                            <span class="album-title">Matunga Shankara Mutt - 2024</span>
+                        </a>
+                    </div>
+                    
+                
+                    <!-- Add more carousel-slide divs as needed -->
+                </div>
+            </div>
+            <button class="carousel-button next">❯</button>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const track = document.querySelector('.carousel-track');
+            const slides = Array.from(track.children);
+            const nextButton = document.querySelector('.next');
+            const prevButton = document.querySelector('.prev');
+            
+            let currentIndex = 0;
+            const slideWidth = slides[0].getBoundingClientRect().width;
+            
+            // Position slides next to each other
+            slides.forEach((slide, index) => {
+                slide.style.left = slideWidth * index + 'px';
+            });
+            
+            const moveToSlide = (currentSlide, targetSlide) => {
+                track.style.transform = 'translateX(-' + targetSlide.style.left + ')';
+                currentSlide.classList.remove('current-slide');
+                targetSlide.classList.add('current-slide');
+            };
+            
+            nextButton.addEventListener('click', () => {
+                const currentSlide = track.querySelector('.current-slide');
+                const nextSlide = currentSlide.nextElementSibling;
+                if (nextSlide) {
+                    moveToSlide(currentSlide, nextSlide);
+                }
+            });
+            
+            prevButton.addEventListener('click', () => {
+                const currentSlide = track.querySelector('.current-slide');
+                const prevSlide = currentSlide.previousElementSibling;
+                if (prevSlide) {
+                    moveToSlide(currentSlide, prevSlide);
+                }
+            });
+        });
+    </script>
+</body>
+</html> 
