@@ -12,28 +12,50 @@
             --background-color: #f5f6fa;
         }
 
+        @keyframes gradientAnimation {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 0;
-            background: linear-gradient(135deg, #f6ea41, #f048c6);
-            background-attachment: fixed;
+            background: linear-gradient(
+                135deg,
+                #e7e3de,
+                #f8cb97,
+                #db9d16,
+                #edec9b,
+                #f4eda2,
+                #e7e3de
+            );
+            background-size: 400% 400%;
+            animation: gradientAnimation 15s ease infinite;
             color: var(--text-color);
             line-height: 1.6;
             min-height: 100vh;
         }
 
         nav {
-            background-color: var(--primary-color);
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
             padding: 1.2em;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 15px rgba(0,0,0,0.05);
             position: sticky;
             top: 0;
             z-index: 1000;
         }
 
         nav a {
-            color: white;
+            color: var(--primary-color);
             text-decoration: none;
             padding: 10px 20px;
             margin-right: 10px;
@@ -43,6 +65,7 @@
 
         nav a:hover {
             background-color: var(--accent-color);
+            color: white;
             transform: translateY(-2px);
         }
 
@@ -50,9 +73,10 @@
             max-width: 1000px;
             margin: 2em auto;
             padding: 20px;
-            background: white;
+            background: rgba(255, 255, 255, 0.9);
             border-radius: 8px;
-            box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+            box-shadow: 0 4px 25px rgba(0,0,0,0.05);
+            backdrop-filter: blur(10px);
         }
 
         h1 {
