@@ -87,11 +87,80 @@
             padding-bottom: 0.2em;
         }
 
-        .audio {
-            background: #fff;
+        .carousel-container {
+            position: relative;
+            width: 100%;
+            margin: 40px 0;
+            overflow: hidden;
+        }
+
+        .carousel {
+            position: relative;
+            height: 250px;
+            margin: 0 40px;
+        }
+
+        .carousel-track {
+            position: relative;
+            height: 100%;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .carousel-slide {
+            position: absolute;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            padding: 0 10px;
+        }
+
+        .audio-card {
+            background: white;
             padding: 20px;
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            height: 100%;
+        }
+
+        .audio-card h3 {
+            margin-top: 0;
+            color: var(--primary-color);
+        }
+
+        .audio-description {
+            margin-top: 10px;
+            font-size: 0.9em;
+            color: #666;
+        }
+
+        .carousel-button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255, 255, 255, 0.8);
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            z-index: 1;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .carousel-button:hover {
+            background: rgba(255, 255, 255, 0.9);
+        }
+
+        .prev {
+            left: 0;
+        }
+
+        .next {
+            right: 0;
+        }
+
+        .current-slide {
+            opacity: 1;
         }
 
         audio {
@@ -128,20 +197,87 @@
 
     <div class="content">
         <h1>Audio Library</h1>
-        <div class="audio">
-            <audio controls>
-                <source src="assets/audio/audio1.mp3" type="audio/mpeg">
-                Your browser does not support the audio element.
-            </audio>
-            <audio controls>
-                <source src="assets/audio/audio2.mp3" type="audio/mpeg">
-                Your browser does not support the audio element.
-            </audio>
-            <audio controls>
-                <source src="assets/audio/audio3.mp3" type="audio/mpeg">
-                Your browser does not support the audio element.
-            </audio>
+        <div class="carousel-container">
+            <button class="carousel-button prev">❮</button>
+            <div class="carousel">
+                <div class="carousel-track">
+                    
+                    <div class="carousel-slide">
+                        <div class="audio-card">
+                            <h3>Chanakya Niti</h3>
+                            <a href="https://photos.app.goo.gl/H6FruSZGqWrZTx8S7" target="_blank">
+                                <img src="assets/img/Chanakya.jpg" alt="Chankaya Niti">
+                                <span class="album-title">Chanakya Niti</span>
+                            </a>
+                            <p class="audio-description">Chanakya Neeti is an ancient Indian text of life principles and political wisdom written by Chanakya (also known as Kautilya or Vishnu Gupta) between the 4th and 3rd centuries BCE. The text contains practical guidelines for living a successful and fulfilling life, presented through concise sutras (aphorisms) in Sanskrit with their interpretations.</p>
+                        </div>
+                    </div>
+                    <div class="carousel-slide">
+                        <div class="audio-card">
+                            <h3>Discourse Title 2</h3>
+                            <audio controls>
+                                <source src="assets/audio/audio2.mp3" type="audio/mpeg">
+                                Your browser does not support the audio element.
+                            </audio>
+                            <p class="audio-description">Brief description of the discourse</p>
+                        </div>
+                    </div>
+                    <div class="carousel-slide">
+                        <div class="audio-card">
+                            <h3>Discourse Title 3</h3>
+                            <audio controls>
+                                <source src="assets/audio/audio3.mp3" type="audio/mpeg">
+                                Your browser does not support the audio element.
+                            </audio>
+                            <p class="audio-description">Brief description of the discourse</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-button next">❯</button>
         </div>
     </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const track = document.querySelector('.carousel-track');
+            const slides = Array.from(track.children);
+            const nextButton = document.querySelector('.next');
+            const prevButton = document.querySelector('.prev');
+            
+            let currentIndex = 0;
+            const slideWidth = slides[0].getBoundingClientRect().width;
+            
+            // Position slides next to each other
+            slides.forEach((slide, index) => {
+                slide.style.left = slideWidth * index + 'px';
+            });
+            
+            // Set initial slide as current
+            slides[0].classList.add('current-slide');
+            
+            const moveToSlide = (currentSlide, targetSlide) => {
+                track.style.transform = 'translateX(-' + targetSlide.style.left + ')';
+                currentSlide.classList.remove('current-slide');
+                targetSlide.classList.add('current-slide');
+            };
+            
+            nextButton.addEventListener('click', () => {
+                const currentSlide = track.querySelector('.current-slide');
+                const nextSlide = currentSlide.nextElementSibling;
+                if (nextSlide) {
+                    moveToSlide(currentSlide, nextSlide);
+                }
+            });
+            
+            prevButton.addEventListener('click', () => {
+                const currentSlide = track.querySelector('.current-slide');
+                const prevSlide = currentSlide.previousElementSibling;
+                if (prevSlide) {
+                    moveToSlide(currentSlide, prevSlide);
+                }
+            });
+        });
+    </script>
 </body>
 </html> 
