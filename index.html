@@ -16,7 +16,7 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 0;
-            background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);
+            background: linear-gradient(135deg, #f5f6fa, #e8ecf3, #dfe4ea);
             background-attachment: fixed;
             color: var(--text-color);
             line-height: 1.6;
@@ -24,9 +24,9 @@
         }
 
         nav {
-            background-color: rgba(44, 62, 80, 0.95);
+            background-color: rgba(255, 255, 255, 0.95);
             padding: 1.2em;
-            box-shadow: 0 2px 15px rgba(0,0,0,0.2);
+            box-shadow: 0 2px 15px rgba(0,0,0,0.05);
             position: sticky;
             top: 0;
             z-index: 1000;
@@ -34,7 +34,7 @@
         }
 
         nav a {
-            color: white;
+            color: var(--primary-color);
             text-decoration: none;
             padding: 10px 20px;
             margin-right: 10px;
@@ -44,6 +44,7 @@
 
         nav a:hover {
             background-color: var(--accent-color);
+            color: white;
             transform: translateY(-2px);
         }
 
@@ -51,9 +52,9 @@
             max-width: 1000px;
             margin: 2em auto;
             padding: 20px;
-            background: rgba(255, 255, 255, 0.95);
+            background: rgba(255, 255, 255, 0.98);
             border-radius: 8px;
-            box-shadow: 0 4px 25px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 25px rgba(0,0,0,0.05);
             backdrop-filter: blur(10px);
         }
 
