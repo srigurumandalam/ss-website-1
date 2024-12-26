@@ -86,7 +86,49 @@
             border-bottom: 2px solid var(--accent-color);
             padding-bottom: 0.2em;
         }
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            padding: 20px 0;
+        }
 
+        .gallery img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .gallery img:hover {
+            transform: scale(1.03);
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                text-align: center;
+            }
+            
+            nav a {
+                display: inline-block;
+                margin: 5px;
+            }
+
+            .content {
+                margin: 1em;
+            }
+
+            h1 {
+                font-size: 2em;
+            }
+
+            .gallery {
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                gap: 15px;
+            }
+        }
         .carousel-container {
             position: relative;
             width: 100%;
@@ -96,7 +138,7 @@
 
         .carousel {
             position: relative;
-            height: 250px;
+            height: 700px;
             margin: 0 40px;
         }
 
@@ -109,28 +151,25 @@
         .carousel-slide {
             position: absolute;
             top: 0;
-            width: 100%;
+            width: 280px;
             height: 100%;
             padding: 0 10px;
         }
 
-        .audio-card {
-            background: white;
-            padding: 20px;
+        .carousel-slide img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-            height: 100%;
         }
 
-        .audio-card h3 {
-            margin-top: 0;
-            color: var(--primary-color);
-        }
-
-        .audio-description {
+        .album-title {
+            display: block;
+            text-align: center;
             margin-top: 10px;
-            font-size: 0.9em;
-            color: #666;
+            color: var(--primary-color);
+            font-weight: bold;
         }
 
         .carousel-button {
@@ -163,9 +202,14 @@
             opacity: 1;
         }
 
-        audio {
-            width: 100%;
-            margin: 10px 0;
+        .audio-card {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            height: auto;
+            max-width: 100%;
+            overflow-y: auto;
         }
 
         @media (max-width: 768px) {
@@ -203,34 +247,13 @@
                 <div class="carousel-track">
                     
                     <div class="carousel-slide">
-                        <div class="audio-card">
+
                             <h3>Chanakya Neeti</h3>
                             <a href="https://photos.app.goo.gl/H6FruSZGqWrZTx8S7" target="_blank">
                                 <img src="assets/img/Chanakya.jpg" alt="Chankaya Niti">
                                 <span class="album-title">Chanakya Neeti</span>
                             </a>
                             <p class="audio-description">Chanakya Neeti is an ancient Indian text of life principles and political wisdom written by Chanakya (also known as Kautilya or Vishnu Gupta) between the 4th and 3rd centuries BCE. The text contains practical guidelines for living a successful and fulfilling life, presented through concise sutras (aphorisms) in Sanskrit with their interpretations.</p>
-                        </div>
-                    </div>
-                    <div class="carousel-slide">
-                        <div class="audio-card">
-                            <h3>Discourse Title 2</h3>
-                            <audio controls>
-                                <source src="assets/audio/audio2.mp3" type="audio/mpeg">
-                                Your browser does not support the audio element.
-                            </audio>
-                            <p class="audio-description">Brief description of the discourse</p>
-                        </div>
-                    </div>
-                    <div class="carousel-slide">
-                        <div class="audio-card">
-                            <h3>Discourse Title 3</h3>
-                            <audio controls>
-                                <source src="assets/audio/audio3.mp3" type="audio/mpeg">
-                                Your browser does not support the audio element.
-                            </audio>
-                            <p class="audio-description">Brief description of the discourse</p>
-                        </div>
                     </div>
                 </div>
             </div>
