@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shankara Shaktananda</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+        nav {
+            background-color: #333;
+            padding: 1em;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 10px;
+            margin-right: 10px;
+        }
+        nav a:hover {
+            background-color: #555;
+        }
+        .content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html">Introduction</a>
+        <a href="photos.html">Photos</a>
+        <a href="videos.html">Videos</a>
+        <a href="audio.html">Audio</a>
+    </nav>
+
+    <!-- Introduction Page -->
+    <div class="content">
+        <h1>Welcome to My Website</h1>
+        <p>This is the introduction page where you can learn more about me and my work.</p>
+    </div>
+
+    <!-- Create photos.html -->
+    <div class="content" style="display: none;">
+        <h1>Photo Gallery</h1>
+        <div class="gallery">
+            <!-- Add your photos here -->
+            <img src="placeholder1.jpg" alt="Photo 1">
+            <img src="placeholder2.jpg" alt="Photo 2">
+            <img src="placeholder3.jpg" alt="Photo 3">
+        </div>
+    </div>
+
+    <!-- Create videos.html -->
+    <div class="content" style="display: none;">
+        <h1>Video Collection</h1>
+        <div class="videos">
+            <!-- Add your videos here -->
+            <video controls>
+                <source src="video1.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    </div>
+
+    <!-- Create audio.html -->
+    <div class="content" style="display: none;">
+        <h1>Audio Library</h1>
+        <div class="audio">
+            <!-- Add your audio files here -->
+            <audio controls>
+                <source src="audio1.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+    </div>
+</body>
+</html>
