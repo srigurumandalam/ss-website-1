@@ -129,6 +129,107 @@
                 font-size: 2em;
             }
         }
+
+        /* Enhanced Responsive Design */
+        @media (max-width: 1024px) {
+            .content {
+                margin: 2em 20px;
+                padding: 15px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                padding: 0.8em;
+                text-align: center;
+            }
+            
+            nav a {
+                display: block;
+                margin: 8px auto;
+                width: 80%;
+                max-width: 300px;
+                padding: 12px;
+            }
+
+            .content {
+                margin: 1em;
+            }
+
+            h1 {
+                font-size: 2em;
+            }
+
+            /* Gallery specific */
+            .gallery {
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                gap: 15px;
+            }
+
+            /* Video specific */
+            .videos video {
+                width: 100%;
+                height: auto;
+            }
+
+            /* Audio specific */
+            .audio {
+                padding: 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            body {
+                font-size: 14px;
+            }
+
+            nav {
+                padding: 0.5em;
+            }
+
+            nav a {
+                width: 90%;
+                margin: 5px auto;
+                padding: 10px;
+            }
+
+            .content {
+                margin: 0.5em;
+                padding: 15px;
+            }
+
+            h1 {
+                font-size: 1.8em;
+                margin-bottom: 0.3em;
+            }
+
+            /* Gallery specific */
+            .gallery {
+                grid-template-columns: 1fr;
+                gap: 10px;
+            }
+
+            .gallery img {
+                height: 250px;
+            }
+        }
+
+        /* Handle landscape orientation */
+        @media (max-height: 500px) and (orientation: landscape) {
+            nav {
+                padding: 0.5em;
+            }
+
+            nav a {
+                display: inline-block;
+                width: auto;
+                margin: 5px;
+            }
+
+            .content {
+                margin: 1em;
+            }
+        }
     </style>
 </head>
 <body>
