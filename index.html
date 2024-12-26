@@ -231,6 +231,52 @@
                 margin: 1em;
             }
         }
+
+        .hero {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            margin-bottom: 40px;
+            padding: 20px;
+        }
+
+        .hero-image {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            border: 3px solid white;
+        }
+
+        .hero-text {
+            flex: 1;
+        }
+
+        .hero-text h2 {
+            color: var(--primary-color);
+            margin: 0 0 15px 0;
+            font-size: 1.8em;
+        }
+
+        .hero-text p {
+            margin: 0;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                flex-direction: column;
+                text-align: center;
+                gap: 20px;
+            }
+
+            .hero-image {
+                width: 150px;
+                height: 150px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -241,8 +287,15 @@
         <a href="audio.html">Audio</a>
     </nav>
 
-    <!-- Introduction Page -->
     <div class="content">
+        <div class="hero">
+            <img src="placeholder-person.jpg" alt="Shankara Shaktananda - Guhai Swami" class="hero-image">
+            <div class="hero-text">
+                <h2>Shankara Shaktananda - Guhai Swami</h2>
+                <p>Welcome to the official website dedicated to Shankara Shaktananda, also known as Guhai Swami. Here you can explore his teachings, photos, videos, and audio recordings that have inspired many on their spiritual journey.</p>
+            </div>
+        </div>
+
         <h1>Welcome to My Website</h1>
         <p>This is the introduction page where you can learn more about me and my work.</p>
     </div>
