@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shankara Shaktananda</title>
+    <title>Audio - Shankara Shaktananda</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -28,6 +28,11 @@
             margin: 0 auto;
             padding: 20px;
         }
+        .audio {
+            display: grid;
+            gap: 20px;
+            padding: 20px 0;
+        }
     </style>
 </head>
 <body>
@@ -38,10 +43,14 @@
         <a href="audio.html">Audio</a>
     </nav>
 
-    <!-- Introduction Page -->
     <div class="content">
-        <h1>Welcome to My Website</h1>
-        <p>This is the introduction page where you can learn more about me and my work.</p>
+        <h1>Audio Library</h1>
+        <div class="audio">
+            <audio controls>
+                <source src="audio1.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
     </div>
 </body>
-</html>
+</html> 
