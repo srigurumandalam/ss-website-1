@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aanjaneyar Kumbabhishekam - Shankara Shaktananda - Guhai Swami</title>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --accent-color: #e74c3c;
+            --text-color: #333;
+            --background-color: #f5f6fa;
+        }
+
+        @keyframes gradientAnimation {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(
+                135deg,
+                #e7e3de,
+                #f8cb97,
+                #db9d16,
+                #edec9b,
+                #f4eda2,
+                #e7e3de
+            );
+            background-size: 400% 400%;
+            animation: gradientAnimation 15s ease infinite;
+            color: var(--text-color);
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        nav {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            padding: 1.2em;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav a {
+            color: var(--primary-color);
+            text-decoration: none;
+            padding: 10px 20px;
+            margin-right: 10px;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+
+        nav a:hover {
+            background-color: var(--accent-color);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .content {
+            max-width: 1000px;
+            margin: 2em auto;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 8px;
+            box-shadow: 0 4px 25px rgba(0,0,0,0.05);
+            backdrop-filter: blur(10px);
+        }
+
+        /* Blog post specific styles */
+        .blog-post {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .blog-header {
+            margin-bottom: 30px;
+        }
+
+        .blog-title {
+            color: var(--primary-color);
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .blog-meta {
+            color: #666;
+            font-size: 0.9em;
+            margin-bottom: 20px;
+        }
+
+        .blog-image {
+            width: 100%;
+            max-height: 500px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+
+        .blog-content p {
+            margin-bottom: 20px;
+            font-size: 1.1em;
+            line-height: 1.8;
+        }
+
+        .blog-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .blog-gallery img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .blog-gallery img:hover {
+            transform: scale(1.05);
+        }
+
+        .back-to-blogs {
+            display: inline-block;
+            margin-top: 30px;
+            color: var(--accent-color);
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .back-to-blogs:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="../../index.html">Introduction</a>
+        <a href="../../media-gallery.html">Media Gallery</a>
+        <a href="../../discourses.html">Discourses</a>
+        <a href="../../blogs.html">Events & News</a>
+    </nav>
+
+    <div class="content">
+        <article class="blog-post">
+            <header class="blog-header">
+                <h1 class="blog-title">Aanjaneyar Kumbabhishekam at Hosur</h1>
+                <div class="blog-meta">
+                    <time datetime="2024-09-08">Published on September 8, 2024</time>
+                </div>
+            </header>
+
+            <img src="../../assets/img/blogs-assets/2024/photos/anjaneyar-kumbhabhishegam.jpg" alt="Guhai Swamiji at Aanjaneyar Kumbabhishekam" class="blog-image">
+
+            <div class="blog-content">
+                <p>On the auspicious morning of September 8, 2024, Guhai Swamiji graced the Kumbabhishekam ceremony of Navati Aanjaneya Swami temple in Hosur. The event commenced at 10:00 AM with traditional Vedic rituals and ceremonies.</p>
+                
+                <p>The temple, adorned with beautiful flower decorations and traditional arrangements, witnessed the presence of numerous devotees who gathered to receive the blessings of both Aanjaneyar and Guhai Swamiji. The atmosphere was filled with divine vibrations as the sacred ceremonies were performed with utmost devotion.</p>
+
+                <p>The Kumbabhishekam ceremony, which involves the consecration of the temple and its deities, was conducted according to Agamic traditions. Swamiji's presence added spiritual significance to this sacred event, blessing all the devotees who participated in this auspicious occasion.</p>
+
+                <!-- Optional image gallery -->
+                <!-- <div class="blog-gallery">
+                    <img src="../../assets/img/blogs-assets/2024/photos/IMG-20240908-WA0005.jpg" alt="Kumbabhishekam Ceremony"> -->
+                    <!-- Add more images as they become available -->
+                <!-- </div> -->
+            </div>
+
+            <div style="margin-top: 30px;">
+                <a href="../2024.html" class="back-to-blogs" style="margin-right: 20px;">← Back to 2024 Events</a>
+                <a href="../../blogs.html" class="back-to-blogs">← Back to All Events</a>
+            </div>
+        </article>
+    </div>
+</body>
+</html> 
