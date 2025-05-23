@@ -235,73 +235,70 @@
 <body>
     <nav>
         <a href="index.html">Introduction</a>
-        <!-- <a href="media-gallery.html">Media Gallery</a> -->
         <a href="discourses.html">Discourses</a>
         <a href="blogs.html">Events & News</a>
     </nav>
 
     <div class="content">
-        <h1>Audio Library</h1>
-        <div class="carousel-container">
-            <button class="carousel-button prev">❮</button>
-            <div class="carousel">
-                <div class="carousel-track">
-                    
-                    <div class="carousel-slide">
-
-                            <h3>Chanakya Neeti</h3>
-                            <a href="https://photos.app.goo.gl/H6FruSZGqWrZTx8S7" target="_blank">
-                                <img src="assets/img/Chanakya.jpg" alt="Chankaya Niti">
-                                <span class="album-title">Chanakya Neeti</span>
-                            </a>
-                            <p class="audio-description">Chanakya Neeti is an ancient Indian text of life principles and political wisdom written by Chanakya (also known as Kautilya or Vishnu Gupta) between the 4th and 3rd centuries BCE. The text contains practical guidelines for living a successful and fulfilling life, presented through concise sutras (aphorisms) in Sanskrit with their interpretations.</p>
-                    </div>
-                </div>
+        <h1>Discourses</h1>
+        
+        <div class="discourse-list">
+            <div class="discourse-item" onclick="window.location.href='lalitha.html'">
+                <img src="assets/img/lalitha-thumb.jpg" alt="Lalitha Sahasranamam">
+                <h2>Lalitha Sahasranamam</h2>
+                <p>Listen to the divine discourse on Lalitha Sahasranamam</p>
             </div>
-            <button class="carousel-button next">❯</button>
+            
+            <div class="discourse-item" onclick="window.location.href='abhirami.html'">
+                <img src="assets/img/abhirami-thumb.jpg" alt="Abhirami Andhathi">
+                <h2>Abhirami Andhathi</h2>
+                <p>Experience the spiritual journey through Abhirami Andhathi</p>
+            </div>
+            
+            <!-- Add more discourse items as needed -->
         </div>
     </div>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const track = document.querySelector('.carousel-track');
-            const slides = Array.from(track.children);
-            const nextButton = document.querySelector('.next');
-            const prevButton = document.querySelector('.prev');
-            
-            let currentIndex = 0;
-            const slideWidth = slides[0].getBoundingClientRect().width;
-            
-            // Position slides next to each other
-            slides.forEach((slide, index) => {
-                slide.style.left = slideWidth * index + 'px';
-            });
-            
-            // Set initial slide as current
-            slides[0].classList.add('current-slide');
-            
-            const moveToSlide = (currentSlide, targetSlide) => {
-                track.style.transform = 'translateX(-' + targetSlide.style.left + ')';
-                currentSlide.classList.remove('current-slide');
-                targetSlide.classList.add('current-slide');
-            };
-            
-            nextButton.addEventListener('click', () => {
-                const currentSlide = track.querySelector('.current-slide');
-                const nextSlide = currentSlide.nextElementSibling;
-                if (nextSlide) {
-                    moveToSlide(currentSlide, nextSlide);
-                }
-            });
-            
-            prevButton.addEventListener('click', () => {
-                const currentSlide = track.querySelector('.current-slide');
-                const prevSlide = currentSlide.previousElementSibling;
-                if (prevSlide) {
-                    moveToSlide(currentSlide, prevSlide);
-                }
-            });
-        });
-    </script>
+    <style>
+        .discourse-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            padding: 20px 0;
+        }
+
+        .discourse-item {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+
+        .discourse-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+        }
+
+        .discourse-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+
+        .discourse-item h2 {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+            font-size: 1.5em;
+        }
+
+        .discourse-item p {
+            color: #666;
+            margin: 0;
+        }
+    </style>
 </body>
-</html> 
+</html>
